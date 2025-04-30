@@ -1,5 +1,5 @@
 # SkillZChain
-***"No more cheating, no hidden results — just pure skill meets blockchain."***
+*****"No more cheating, no hidden results — just pure skill meets blockchain."*****
 
 SKillZChain is a blockchain-powered platform where players participate in competitive, skill-based games such as trivia, puzzles,
 and strategy challenges. The platform leverages Algorand smart contracts to ensure transparent reward distribution, automated reward
