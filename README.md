@@ -12,6 +12,7 @@ and it can't be messed with. You know how in regular online games, sometimes peo
 company controls everything? SkillZChain wants to fix that by using smart contracts. These basically handle the game rules,
 check scores, and give out rewards automatically – so you don't need to trust some middleman.
 
+
 You can play in competitive games and tournaments and win SKILLZ tokens based on how well you do. These tokens aren't just for
 bragging rights; they also help run the platform. The best players and active people can even have a say in what happens next
 with SkillZChain. They've got stuff to stop cheaters, leaderboards that are right there on the blockchain, and ways to prove the
