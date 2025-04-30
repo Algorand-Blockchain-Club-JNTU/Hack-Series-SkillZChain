@@ -19,4 +19,5 @@ games are fair. This makes it a safe and fair place for everyone.
 
 But SkillZChain isn't just about playing games. They want to build a whole decentralized gaming economy where your skills are
 valuable, everyone can see how you perform, and players actually own their wins. So, whether you just play for fun or you're
-serious about eSports, SkillZChain wants to be a place where you can show off your skills, earn some value, and help decide what the future of gaming looks like.
+serious about eSports, SkillZChain wants to be a place where you can show off your skills, earn some value, and help decide 
+what the future of gaming looks like.
