@@ -5,22 +5,23 @@ import Link from "next/link"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import { ConnectWalletButton } from "@/components/wallet/connect-wallet-button"
 
 interface MobileMenuProps {
-  onAboutClickAction: () => void
+  onAboutClick: () => void
   onHowItWorksClick: () => void
   walletConnected: boolean
   onConnectWallet: () => void
 }
 
-export function MobileMenu({ onAboutClickAction, onHowItWorksClick, walletConnected, onConnectWallet }: MobileMenuProps) {
+export function MobileMenu({ onAboutClick, onHowItWorksClick, walletConnected, onConnectWallet }: MobileMenuProps) {
   const [isOpen, setIsOpen] = useState(false)
 
   const toggleMenu = () => setIsOpen(!isOpen)
   const closeMenu = () => setIsOpen(false)
 
   const handleAboutClick = () => {
-    onAboutClickAction()
+    onAboutClick()
     closeMenu()
   }
 
@@ -79,15 +80,12 @@ export function MobileMenu({ onAboutClickAction, onHowItWorksClick, walletConnec
             Battlegrounds
           </Link>
           <div className="mt-6">
-            <Button
-              onClick={() => {
-                onConnectWallet()
-                closeMenu()
-              }}
-              className="w-full bg-gradient-to-r from-yellow-400 to-purple-600 hover:from-yellow-500 hover:to-purple-700 text-black font-medium py-6"
-            >
-              {walletConnected ? "Wallet Connected" : "Connect Wallet"}
-            </Button>
+            <div onClick={closeMenu}>
+              <ConnectWalletButton
+                className="w-full bg-gradient-to-r from-yellow-400 to-purple-600 hover:from-yellow-500 hover:to-purple-700 text-black font-medium py-6"
+                fullWidth={true}
+              />
+            </div>
           </div>
         </nav>
       </div>

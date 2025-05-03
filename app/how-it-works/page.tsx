@@ -15,6 +15,9 @@ import {
   MessageSquare,
 } from "lucide-react"
 
+// Import the ConnectWalletButton component
+import { ConnectWalletButton } from "@/components/wallet/connect-wallet-button"
+
 export default function HowItWorksPage() {
   return (
     <div className="min-h-screen bg-[#0f1218] text-white">
@@ -30,9 +33,8 @@ export default function HowItWorksPage() {
               Chain
             </span>
           </Link>
-          <Button className="bg-gradient-to-r from-yellow-400 to-purple-600 hover:from-yellow-500 hover:to-purple-700 text-black font-medium">
-            <Wallet className="mr-2 h-4 w-4" /> Connect Wallet
-          </Button>
+          {/* Replace the Button component in the header with ConnectWalletButton */}
+          <ConnectWalletButton />
         </div>
         <div className="h-0.5 w-full bg-gradient-to-r from-purple-500 via-cyan-400 to-yellow-300"></div>
       </header>
