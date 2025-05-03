@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@hookform/resolvers": "^3.9.1",
+    "@hookform/resolvers": "latest",
     "@radix-ui/react-accordion": "1.2.2",
     "@radix-ui/react-alert-dialog": "1.1.4",
     "@radix-ui/react-aspect-ratio": "1.1.1",
@@ -50,14 +50,26 @@
     "react": "^19",
     "react-day-picker": "8.10.1",
     "react-dom": "^19",
-    "react-hook-form": "^7.54.1",
+    "react-hook-form": "latest",
     "react-resizable-panels": "^2.1.7",
     "recharts": "2.15.0",
     "sonner": "^1.7.1",
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^0.9.6",
-    "zod": "^3.24.1"
+    "zod": "latest",
+    "@blockshake/defly-connect": "latest",
+    "@magic-ext/algorand": "latest",
+    "@walletconnect/modal": "latest",
+    "@perawallet/connect": "latest",
+    "@walletconnect/sign-client": "latest",
+    "algosdk": "latest",
+    "lute-connect": "latest",
+    "magic-sdk": "latest",
+    "@supabase/supabase-js": "latest",
+    "resend": "latest",
+    "@txnlab/use-wallet-react": "latest",
+    "react-toastify": "latest"
   },
   "devDependencies": {
     "@types/node": "^22",
