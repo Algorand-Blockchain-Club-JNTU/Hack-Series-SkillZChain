@@ -1,0 +1,84 @@
+import { Contract } from '@algorandfoundation/tealscript';
+
+
+export class Fight extends Contract {
+
+    depositedAmount = GlobalStateKey<uint64>();
+
+    
+
+
+    player1 = GlobalStateKey<Address>();
+  
+    player2 = GlobalStateKey<Address>();
+    asa = GlobalStateKey<AssetID>();
+
+    createApplication(player1: Address, player2: Address): void {
+
+        
+        this.player1.value = player1;
+        this.player2.value = player2;
+        this.depositedAmount.value = 0;
+        this.asa.value = AssetID.zeroIndex;
+
+
+      }
+
+
+      optIntoAsset(asset: AssetID): void {
+        /// Only allow app creator to opt the app account into a ASA
+        verifyAppCallTxn(this.txn, { sender: globals.creatorAddress });
+    
+        /// Verify a ASA hasn't already been opted into
+        assert(this.asa.value === AssetID.zeroIndex);
+    
+        /// Save ASA ID in global state
+        this.asa.value = asset;
+    
+        /// Submit opt-in transaction: 0 asset transfer to self
+        sendAssetTransfer({
+          assetReceiver: this.app.address,
+          xferAsset: asset,
+          assetAmount: 0,
+        });
+      }
+
+      depositfunds(ftransx : AssetTransferTxn){
+        assert(
+            this.txn.sender === this.app.creator ||
+              this.txn.sender === this.player1.value ||
+              this.txn.sender === this.player2.value
+          );
+
+          verifyAssetTransferTxn(ftransx, {
+            assetReceiver: this.app.address,
+            xferAsset: this.asa.value
+        });
+        this.depositedAmount.value += ftransx.assetAmount;
+
+
+
+
+      }
+
+
+      sendFunds (player: Address){
+
+        assert(
+            this.txn.sender === this.app.creator
+          );
+          sendPayment({
+            receiver: player,
+            amount: this.depositedAmount.value,
+          });
+          this.depositedAmount.value = 0;
+
+
+
+      }
+
+
+
+
+
+}
